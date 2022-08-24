@@ -1,0 +1,6 @@
+pick 7957ef0 Created components as content for Pension Benefits tab
+s 47d6ef3 Updated PensionBenefits tab by adding content matches UI spec
+s e71d5f6 Updated components for PensionBenefits
+order for sqashing 3 commits together
+
+then press Esc and :wq

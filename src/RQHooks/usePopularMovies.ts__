@@ -1,0 +1,20 @@
+import { useQuery } from "react-query";
+import { queryKeys } from "react-query/keys";
+import { fetchPopularMovies } from "services/api/fetchPosts";
+import { MOVIE_DETAILS } from "types/movies";
+
+export const usePopularoviesData = (
+  onSuccess: () => void | undefined,
+  onError: () => void | undefined
+) => {
+  return (
+    useQuery < MOVIE_DETAILS,
+    Error >
+      ([queryKeys.popularMovies],
+      fetchPopularMovies,
+      {
+        onSuccess,
+        onError,
+      })
+  );
+};
