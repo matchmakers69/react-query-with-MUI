@@ -9,15 +9,15 @@ An example of building the app using React Query.
 ## useQuery properties
 
 - isLoading
-
 - isFetching
+- isError
 
-### isLoading vs isFetching
+### isError
 
-#### isLoading
+### isLoading
 
-- Deduping multiple requests for the same data into a single request
+- no cached data, plus isFetching - we have no cached data to display
 
-#### isFetching
+### isFetching
 
-- Deduping multiple requests for the same data into a single request
+- the async query function has not been resolved yet - promise based library for example - Promise is not resolved yet
