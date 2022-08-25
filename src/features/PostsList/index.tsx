@@ -4,13 +4,14 @@ import { useQuery } from "react-query";
 import FetchingError from "components/ui/FetchingError";
 
 const PostsList = () => {
-  // isLoding - boolean (once is falsed we return data)
   const {
     data: posts,
     isLoading,
     isError,
     error,
-  } = useQuery("posts", fetchPosts);
+  } = useQuery("posts", fetchPosts, {
+    staleTime: 2000,
+  });
   if (isLoading) {
     return <LoadingIndicator />;
   }
