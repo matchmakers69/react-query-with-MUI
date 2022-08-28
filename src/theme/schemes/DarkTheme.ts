@@ -6,13 +6,15 @@ export const fontSecondary = "'Oswald', sans-serif";
 
 const themeColors = {
   primary: "#0FFFFF",
-  secondary: "#DDDDDD",
+  secondary: "#FFFFFF",
   black: "#000000",
-  white: "#FFFFFF",
+  white: "#111633",
   success: "#57CA22",
   warning: "#FFA319",
   error: "#FF1943",
   info: "#0FFFFF",
+  primaryAlt: "#111633",
+  trueWhite: "#ffffff",
 };
 
 const colors = {
@@ -39,7 +41,19 @@ const colors = {
   },
   layout: {
     general: {
-      bodyBg: "#f2f5f9",
+      bodyBg: "#000000",
+    },
+    sidebar: {
+      background: themeColors.primaryAlt,
+      textColor: themeColors.secondary,
+      dividerBg: "#272C48",
+      menuItemColor: "#9EA4C1",
+      menuItemColorActive: "#ffffff",
+      menuItemBg: themeColors.primaryAlt,
+      menuItemBgActive: "rgba(43, 48, 77, .6)",
+      menuItemIconColor: "#444A6B",
+      menuItemIconColorActive: "#ffffff",
+      menuItemHeadingColor: darken(themeColors.secondary, 0.3),
     },
   },
   alpha: {
@@ -51,6 +65,14 @@ const colors = {
       70: alpha(themeColors.white, 0.7),
       100: themeColors.white,
     },
+    trueWhite: {
+      5: alpha(themeColors.trueWhite, 0.02),
+      10: alpha(themeColors.trueWhite, 0.1),
+      30: alpha(themeColors.trueWhite, 0.3),
+      50: alpha(themeColors.trueWhite, 0.5),
+      70: alpha(themeColors.trueWhite, 0.7),
+      100: themeColors.trueWhite,
+    },
     black: {
       5: alpha(themeColors.black, 0.02),
       10: alpha(themeColors.black, 0.1),
@@ -61,38 +83,38 @@ const colors = {
     },
   },
   secondary: {
-    lighter: lighten(themeColors.secondary, 0.85),
-    light: themeColors.white,
+    lighter: alpha(themeColors.secondary, 0.85),
+    light: alpha(themeColors.secondary, 1),
     main: themeColors.secondary,
     dark: darken(themeColors.secondary, 0.2),
   },
   primary: {
-    lighter: lighten(themeColors.primary, 0.85),
-    light: themeColors.primary,
-    main: themeColors.black,
-    dark: themeColors.black,
+    lighter: alpha(themeColors.primary, 0.85),
+    light: alpha(themeColors.primary, 1),
+    main: themeColors.primary,
+    dark: darken(themeColors.primary, 0.2),
   },
   success: {
-    lighter: lighten(themeColors.success, 0.85),
-    light: lighten(themeColors.success, 0.3),
+    lighter: alpha(themeColors.success, 0.85),
+    light: alpha(themeColors.success, 0.3),
     main: themeColors.success,
     dark: darken(themeColors.success, 0.2),
   },
   warning: {
-    lighter: lighten(themeColors.warning, 0.85),
-    light: lighten(themeColors.warning, 0.3),
+    lighter: alpha(themeColors.warning, 0.85),
+    light: alpha(themeColors.warning, 0.3),
     main: themeColors.warning,
     dark: darken(themeColors.warning, 0.2),
   },
   error: {
-    lighter: lighten(themeColors.error, 0.85),
-    light: lighten(themeColors.error, 0.3),
+    lighter: alpha(themeColors.error, 0.85),
+    light: alpha(themeColors.error, 0.3),
     main: themeColors.error,
     dark: darken(themeColors.error, 0.2),
   },
   info: {
-    lighter: lighten(themeColors.info, 0.85),
-    light: lighten(themeColors.info, 0.3),
+    lighter: alpha(themeColors.info, 0.85),
+    light: alpha(themeColors.info, 0.3),
     main: themeColors.info,
     dark: darken(themeColors.info, 0.2),
   },
@@ -120,6 +142,14 @@ export const DarkTheme = createTheme({
         50: alpha(themeColors.white, 0.5),
         70: alpha(themeColors.white, 0.7),
         100: themeColors.white,
+      },
+      trueWhite: {
+        5: alpha(themeColors.trueWhite, 0.02),
+        10: alpha(themeColors.trueWhite, 0.1),
+        30: alpha(themeColors.trueWhite, 0.3),
+        50: alpha(themeColors.trueWhite, 0.5),
+        70: alpha(themeColors.trueWhite, 0.7),
+        100: themeColors.trueWhite,
       },
       black: {
         5: alpha(themeColors.black, 0.02),
@@ -173,10 +203,25 @@ export const DarkTheme = createTheme({
     borderRadiusLg: "12px",
     borderRadiusXl: "16px",
   },
+  sidebar: {
+    background: colors.layout.sidebar.background,
+    textColor: colors.layout.sidebar.textColor,
+    dividerBg: colors.layout.sidebar.dividerBg,
+    menuItemColor: colors.layout.sidebar.menuItemColor,
+    menuItemColorActive: colors.layout.sidebar.menuItemColorActive,
+    menuItemBg: colors.layout.sidebar.menuItemBg,
+    menuItemBgActive: colors.layout.sidebar.menuItemBgActive,
+    menuItemIconColor: colors.layout.sidebar.menuItemIconColor,
+    menuItemIconColorActive: colors.layout.sidebar.menuItemIconColorActive,
+    menuItemHeadingColor: colors.layout.sidebar.menuItemHeadingColor,
+    boxShadow: "1px 0 0 #272C48",
+    width: "290px",
+  },
   header: {
     height: "80px",
-    background: colors.primary.dark,
-    textColor: colors.secondary.light,
+    background: themeColors.primaryAlt,
+    boxShadow: "0px 1px 0px #272C48",
+    textColor: colors.secondary.main,
   },
   footer: {
     background: colors.gradients.blue1,
@@ -188,7 +233,7 @@ export const DarkTheme = createTheme({
       black: colors.alpha.black[100],
       white: colors.alpha.white[100],
     },
-    mode: "light",
+    mode: "dark",
     primary: {
       light: colors.primary.light,
       main: colors.primary.main,
@@ -270,6 +315,7 @@ export const DarkTheme = createTheme({
     MuiCssBaseline: {
       styleOverrides: {
         "html, body": {
+          fontSize: "62.5%",
           width: "100%",
           height: "100%",
         },
@@ -279,7 +325,7 @@ export const DarkTheme = createTheme({
           minHeight: "100%",
           width: "100%",
           flex: 1,
-          backgroundColor: colors.primary.dark,
+          fontSize: "1.6rem",
         },
         "#root": {
           width: "100%",
@@ -547,6 +593,8 @@ export const DarkTheme = createTheme({
           textTransform: "none",
           paddingLeft: 16,
           paddingRight: 16,
+          color: colors.secondary.light,
+          fontSize: 14,
 
           ".MuiSvgIcon-root": {
             transition: "all .2s",
@@ -558,7 +606,7 @@ export const DarkTheme = createTheme({
         containedSecondary: {
           backgroundColor: colors.secondary.main,
           color: colors.alpha.white[100],
-          border: "1px solid " + colors.alpha.black[30],
+          border: "1px solid " + colors.alpha.white,
         },
         outlinedSecondary: {
           backgroundColor: colors.alpha.white[100],

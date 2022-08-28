@@ -33,6 +33,14 @@ declare module "@mui/material/styles" {
           70: string;
           100: string;
         };
+        trueWhite: {
+          5: string;
+          10: string;
+          30: string;
+          50: string;
+          70: string;
+          100: string;
+        };
         black: {
           5: string;
           10: string;
@@ -85,10 +93,25 @@ declare module "@mui/material/styles" {
       borderRadiusLg: string;
       borderRadiusXl: string;
     };
+    sidebar: {
+      background: React.CSSProperties["color"];
+      boxShadow: React.CSSProperties["color"];
+      width: string;
+      textColor: React.CSSProperties["color"];
+      dividerBg: React.CSSProperties["color"];
+      menuItemColor: React.CSSProperties["color"];
+      menuItemColorActive: React.CSSProperties["color"];
+      menuItemBg: React.CSSProperties["color"];
+      menuItemBgActive: React.CSSProperties["color"];
+      menuItemIconColor: React.CSSProperties["color"];
+      menuItemIconColorActive: React.CSSProperties["color"];
+      menuItemHeadingColor: React.CSSProperties["color"];
+    };
     header: {
       height: string;
       background: React.CSSProperties["color"];
       textColor: React.CSSProperties["color"];
+      boxShadow: React.CSSProperties["color"];
     };
     footer: {
       background: React.CSSProperties["color"];
@@ -119,6 +142,14 @@ declare module "@mui/material/styles" {
           70: string;
           100: string;
         };
+        trueWhite: {
+          5: string;
+          10: string;
+          30: string;
+          50: string;
+          70: string;
+          100: string;
+        };
         black: {
           5: string;
           10: string;
@@ -175,6 +206,21 @@ declare module "@mui/material/styles" {
       height: string;
       background: React.CSSProperties["color"];
       textColor: React.CSSProperties["color"];
+      boxShadow: React.CSSProperties["color"];
+    };
+    sidebar: {
+      background: React.CSSProperties["color"];
+      boxShadow: React.CSSProperties["color"];
+      width: string;
+      textColor: React.CSSProperties["color"];
+      dividerBg: React.CSSProperties["color"];
+      menuItemColor: React.CSSProperties["color"];
+      menuItemColorActive: React.CSSProperties["color"];
+      menuItemBg: React.CSSProperties["color"];
+      menuItemBgActive: React.CSSProperties["color"];
+      menuItemIconColor: React.CSSProperties["color"];
+      menuItemIconColorActive: React.CSSProperties["color"];
+      menuItemHeadingColor: React.CSSProperties["color"];
     };
     footer: {
       background: React.CSSProperties["color"];

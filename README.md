@@ -31,6 +31,7 @@ An example of building the app using React Query.
 - cache is for data might be used later
 - query goeas into "cold storage" if there's no active useQuery
 - cache data expires after **cacheTime** (default: 5minutes)
+- after the cache expires, the data is garbage collected and no longer available for the user
 
 ### staleTime - really depends on type of the data for example data which does not require to be refetched all the time can be staled for a bit longer
 

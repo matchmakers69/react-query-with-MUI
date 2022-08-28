@@ -7,9 +7,9 @@ import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
-import { useNavigate } from "react-router-dom";
+import constants from "../../../constants";
+import { useNavigate, NavLink as RouterLink } from "react-router-dom";
 import { useState, MouseEvent } from "react";
-import { appRoutes } from "routes/service/routesMapper";
 import Logo from "../Logo";
 
 const AppBar = () => {
@@ -62,21 +62,20 @@ const AppBar = () => {
                   display: { xs: "block", md: "none" },
                 }}
               >
-                {appRoutes
-                  ?.filter((route) => {
-                    return route.title !== "Movie Details";
-                  })
-                  .map((page) => {
-                    return (
-                      <Button
-                        key={page.key}
-                        onClick={() => handleCloseNavMenu(page.path)}
-                        sx={{ my: 2, color: "white", display: "block" }}
-                      >
-                        {page.title}
-                      </Button>
-                    );
-                  })}
+                <Button
+                  disableRipple
+                  component={RouterLink}
+                  to={constants.routes.HOME}
+                >
+                  Home
+                </Button>
+                <Button
+                  disableRipple
+                  component={RouterLink}
+                  to={constants.routes.REACT_QUERY}
+                >
+                  React query
+                </Button>
               </Menu>
             </Box>
             <Typography
@@ -93,21 +92,20 @@ const AppBar = () => {
                 display: { xs: "none", md: "flex", justifyContent: "flex-end" },
               }}
             >
-              {appRoutes
-                ?.filter((route) => {
-                  return route.title !== "Movie Details";
-                })
-                .map((page) => {
-                  return (
-                    <Button
-                      key={page.key}
-                      onClick={() => handleCloseNavMenu(page.path)}
-                      sx={{ my: 2, color: "white", display: "block" }}
-                    >
-                      {page.title}
-                    </Button>
-                  );
-                })}
+              <Button
+                disableRipple
+                component={RouterLink}
+                to={constants.routes.HOME}
+              >
+                Home
+              </Button>
+              <Button
+                disableRipple
+                component={RouterLink}
+                to={constants.routes.REACT_QUERY}
+              >
+                React query
+              </Button>
             </Box>
           </Toolbar>
         </Container>

@@ -6,7 +6,7 @@ type PageProps = {
   title: string;
 };
 
-const Page = ({ children, title }: PageProps) => {
+const Page = ({ children, title = "Post title" }: PageProps) => {
   return (
     <>
       <Box
