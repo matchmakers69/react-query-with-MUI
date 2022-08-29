@@ -14,9 +14,7 @@ const PostPage = () => {
     data: postContent,
     isError,
     isLoading,
-  } = useQuery(["post", id], () => fetchPostById(Number(id)), {
-    enabled: !!id,
-  });
+  } = useQuery(["post", id], () => fetchPostById(Number(id)));
 
   if (isLoading) {
     return <LoadingIndicator />;
@@ -27,8 +25,9 @@ const PostPage = () => {
 
   return (
     <PageTitleWrapper>
-      <Page title={postContent?.title ?? ""}>Post content here</Page>
-      {postContent && <PostDetail post={postContent} />}
+      <Page title={postContent?.title ?? ""}>
+        {postContent && <PostDetail post={postContent} />}
+      </Page>
     </PageTitleWrapper>
   );
 };

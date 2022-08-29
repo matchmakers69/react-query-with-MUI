@@ -3,6 +3,7 @@ import LoadingIndicator from "components/ui/LoadingIndicator";
 import { useQuery } from "react-query";
 import { fetchCommentsById } from "services/api/posts";
 import { Post } from "types/posts/posts";
+import CommentsContent from "../CommentsContent";
 
 type PostDetailProps = {
   post: Post;
@@ -23,8 +24,8 @@ const PostDetail = ({ post }: PostDetailProps) => {
   if (isError) {
     return <FetchingError errorMessage="Sorry, error with fetching posts" />;
   }
-  console.log(comments);
-  return <div>PostDetail</div>;
+
+  return <>{comments && <CommentsContent comments={comments} />}</>;
 };
 
 export default PostDetail;
