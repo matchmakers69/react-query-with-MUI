@@ -14,7 +14,7 @@ const PostDetail = ({ post }: PostDetailProps) => {
     isError,
     data: comments,
     isLoading,
-  } = useQuery(["comments"], () => fetchCommentsById(post?.id), {
+  } = useQuery(["comments", post.id], () => fetchCommentsById(post?.id), {
     enabled: !!post,
   });
 

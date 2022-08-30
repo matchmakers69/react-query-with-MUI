@@ -2,8 +2,10 @@ import jsonPlaceholderClient from "config/axios/JsonPlaceholderClient";
 import { Comment } from "types/posts/comments";
 import { Post } from "types/posts/posts";
 
-export const fetchPosts = async (): Promise<Post[]> => {
-  const result = await jsonPlaceholderClient.get(`/posts?_limit=10&_page=0`);
+export const fetchPosts = async (pageNum: number): Promise<Post[]> => {
+  const result = await jsonPlaceholderClient.get(
+    `/posts?_limit=10&_page=${pageNum}`
+  );
   return result.data;
 };
 

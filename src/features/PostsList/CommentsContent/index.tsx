@@ -22,26 +22,14 @@ const DividerWrapper = styled(Divider)(
 `
 );
 
-const CardWrapperPrimary = styled(Card)(
-  ({ theme }) => `
-      background: ${theme.colors.primary.main};
-      color: ${theme.palette.primary.contrastText};
-      padding: ${theme.spacing(2)};
-      border-radius: ${theme.general.borderRadiusXl};
-      border-top-right-radius: ${theme.general.borderRadius};
-      max-width: 380px;
-      display: inline-flex;
-`
-);
-
 const CardWrapperSecondary = styled(Card)(
   ({ theme }) => `
-      background: ${theme.colors.alpha.black[10]};
-      color: ${theme.colors.alpha.black[100]};
-      padding: ${theme.spacing(2)};
+     background: ${theme.colors.alpha.white[80]};
+      color: ${theme.palette.secondary.light};
+      padding: ${theme.spacing(1.5)};
       border-radius: ${theme.general.borderRadiusXl};
-      border-top-left-radius: ${theme.general.borderRadius};
-      max-width: 380px;
+      border-top-right-radius: ${theme.general.borderRadius};
+      max-width: 100%;
       display: inline-flex;
 `
 );
@@ -65,15 +53,27 @@ const CommentsContent = ({ comments }: CommentsContentProps) => {
             justifyContent="flex-start"
             py={3}
           >
-            <Avatar
-              variant="rounded"
-              sx={{
-                width: 50,
-                height: 50,
-              }}
-              alt="Zain Baptista"
-              src="/static/images/avatars/2.jpg"
-            />
+            <Box
+              display="flex"
+              alignItems="flex-start"
+              flexDirection="column"
+              justifyContent="flex-start"
+              ml={2}
+            >
+              <Avatar
+                variant="rounded"
+                sx={{
+                  width: 50,
+                  height: 50,
+                }}
+                alt="Zain Baptista"
+                src="/static/images/avatars/2.jpg"
+              />
+              <Typography variant="h4" component="h4">
+                {comment.email}
+              </Typography>
+            </Box>
+
             <Box
               display="flex"
               alignItems="flex-start"

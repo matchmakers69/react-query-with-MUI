@@ -35,7 +35,7 @@ const SinglePost = ({ post }: SinglePostProps) => {
         <Button
           href={`${constants.routes.POSTS}/${post.id}`}
           size="large"
-          variant="contained"
+          variant="outlined"
         >
           Read post
         </Button>

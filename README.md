@@ -40,3 +40,15 @@ An example of building the app using React Query.
 - by default it is 0 miliseconds - we always assume data is out of date and it needs to be refetch from the server (just to avoid having outdated data on the client)
 - staleTime translates to "max age" we allow data to be
 - how long we tolerate data potentially being out of date
+
+###prefetching
+
+- adding data into cache
+- automatically stale
+
+## useMutation hook properties
+
+- returns mutate function
+- does not need a key (we don't store any data)
+- isLoading but no isFetching, (isFetching would not make any sense - there is no caching)
+- useMutation no retries, where useQuery tries three times before throws an error
