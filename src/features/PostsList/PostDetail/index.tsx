@@ -1,7 +1,9 @@
+import { Button, Typography } from "@mui/material";
+import { Box } from "@mui/system";
 import FetchingError from "components/ui/FetchingError";
 import LoadingIndicator from "components/ui/LoadingIndicator";
-import { useQuery } from "react-query";
-import { fetchCommentsById } from "services/api/posts";
+import { useMutation, useQuery } from "react-query";
+import { deletePostById, fetchCommentsById } from "services/api/posts";
 import { Post } from "types/posts/posts";
 import CommentsContent from "../CommentsContent";
 
@@ -18,6 +20,10 @@ const PostDetail = ({ post }: PostDetailProps) => {
     enabled: !!post,
   });
 
+  const deleteMutation = useMutation((postId: number) =>
+    deletePostById(postId)
+  );
+
   if (isLoading) {
     return <LoadingIndicator />;
   }
@@ -25,7 +31,22 @@ const PostDetail = ({ post }: PostDetailProps) => {
     return <FetchingError errorMessage="Sorry, error with fetching posts" />;
   }
 
-  return <>{comments && <CommentsContent comments={comments} />}</>;
+  return (
+    <>
+      <Box>
+        <Typography variant="body2">{post.body}</Typography>
+        <Box py={3}>
+          <Button
+            onClick={() => deleteMutation.mutate(post.id)}
+            variant="outlined"
+          >
+            Delete
+          </Button>
+        </Box>
+        {comments && <CommentsContent comments={comments} />}
+      </Box>
+    </>
+  );
 };
 
 export default PostDetail;
